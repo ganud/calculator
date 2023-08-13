@@ -14,9 +14,21 @@ function divide(a,b) {
     return(a / b)
 }
 
+function addKey(text) {
+    displaytext = displaytext + text;
+    displayHTML.innerHTML = displaytext;
+    console.log(text)
+}
+
+function clearDisplay(text) {
+    displayHTML.innerHTML = "";
+}
+
 let num1 = "";
 let operator = "";
 let num2 = "";
+const displayHTML = document.getElementsByClassName('display')[0];
+let displaytext = "";
 
 function operate(a,b,operator) {
     a = parseInt(a);

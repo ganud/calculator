@@ -16,12 +16,17 @@
     height: 500px;
     width: 350px;
     background-color: rgb(74, 82, 79);
+    border: 2px solid black;
+    border-radius: 20px;
     gap: 20px;
 }
 
 .display {
     background-color: gray;
     padding: 20px;
+    text-align: right;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .buttons {
