@@ -1,0 +1,43 @@
+.html, body {
+    background-color: rgb(223, 209, 209);
+    margin: 0px;
+}
+.main-div {
+    height:100vh;
+    background-color: rgb(210, 163, 101);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    height: 500px;
+    width: 350px;
+    background-color: rgb(74, 82, 79);
+    gap: 20px;
+}
+
+.display {
+    background-color: gray;
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(97, 92, 84);
+    flex: 1;
+}
+
+.col {
+    display: flex;
+    gap: 10px;
+    padding:10px;
+    flex: 1;
+}
+.item {
+    flex: 1;
+    padding:10px
+}
