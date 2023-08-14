@@ -16,32 +16,40 @@ function divide(a,b) {
 
 function addKey(text) {
     displaytext = displaytext + text;
+    if(inputtednum1 == false) {
+        num1 = displaytext;
+    } else {
+        num2 = displaytext;
+    }
     displayHTML.innerHTML = displaytext;
     console.log(text)
 }
 
 function clearDisplay(text) {
     displayHTML.innerHTML = "";
+    displaytext = "";
+    num1 = "";
+    operator = "";
+    num2 = "";
+    inputtednum1 = false;
 }
-
+let inputtednum1 = false;
 let operator = "";
 let num1 = "";
 let num2 = "";
-
+// Create conditions to take num1 and num2
 function addOperator(operand) {
+    inputtednum1 = true;
     operator = operand;
-    if(!num1) {
-        num1 = displaytext;
-    }
-    else if(!num2) {
-        num2 = displaytext;
-    }
     displaytext = ""
     displayHTML.innerHTML = operand;
 }
 
 function displayAnswer() {
+    inputtednum1 = false;
     let ans = operate(num1, num2, operator);
+    num1 = ans;
+    displaytext = ans;
     displayHTML.innerHTML = ans;
 }
 const displayHTML = document.getElementsByClassName('display')[0];
