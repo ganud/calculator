@@ -56,8 +56,8 @@ const displayHTML = document.getElementsByClassName('display')[0];
 let displaytext = "";
 
 function operate(a,b,operator) {
-    a = parseInt(a);
-    b = parseInt(b);
+    a = parseFloat(a);
+    b = parseFloat(b);
     switch (operator) {
         case '+':
             return add(a,b);
