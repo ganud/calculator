@@ -52,6 +52,16 @@ function displayAnswer() {
     displaytext = ans;
     displayHTML.innerHTML = ans;
 }
+
+function deleteKey() {
+    displaytext = displaytext.slice(0,-1);
+    if(inputtednum1 == false) {
+        num1 = displaytext;
+    } else {
+        num2 = displaytext;
+    }
+    displayHTML.innerHTML = displaytext;
+}
 const displayHTML = document.getElementsByClassName('display')[0];
 let displaytext = "";
 
@@ -65,7 +75,7 @@ function operate(a,b,operator) {
         case '-':
             return subtract(a,b);
             break;
-        case '/':
+        case '÷':
             return divide(a,b);
             break;
         case '*':
