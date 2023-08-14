@@ -24,9 +24,26 @@ function clearDisplay(text) {
     displayHTML.innerHTML = "";
 }
 
-let num1 = "";
 let operator = "";
+let num1 = "";
 let num2 = "";
+
+function addOperator(operand) {
+    operator = operand;
+    if(!num1) {
+        num1 = displaytext;
+    }
+    else if(!num2) {
+        num2 = displaytext;
+    }
+    displaytext = ""
+    displayHTML.innerHTML = operand;
+}
+
+function displayAnswer() {
+    let ans = operate(num1, num2, operator);
+    displayHTML.innerHTML = ans;
+}
 const displayHTML = document.getElementsByClassName('display')[0];
 let displaytext = "";
 
@@ -48,3 +65,7 @@ function operate(a,b,operator) {
             break;
     }
 }
+
+// When operator clicked
+// Set current input to first number, allow input for second number.
+// Operate and update currentvalue to firstnumber
