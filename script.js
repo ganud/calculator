@@ -16,6 +16,12 @@ function divide(a,b) {
 
 function addKey(text) {
     displaytext = displaytext + text;
+    if(displaytext.includes(".")) {
+        dotbutton.disabled = true;
+    }
+    else {
+        dotbutton.disabled = false;
+    }
     if(inputtednum1 == false) {
         num1 = displaytext;
     } else {
@@ -31,16 +37,22 @@ function clearDisplay(text) {
     num1 = "";
     operator = "";
     num2 = "";
+    dotbutton.disabled = false;
     inputtednum1 = false;
 }
+
 let inputtednum1 = false;
 let operator = "";
 let num1 = "";
 let num2 = "";
+const displayHTML = document.getElementsByClassName('display')[0];
+let displaytext = "";
+const dotbutton = document.getElementById("dot");
 // Create conditions to take num1 and num2
 function addOperator(operand) {
     inputtednum1 = true;
     operator = operand;
+    dotbutton.disabled = false;
     displaytext = ""
     displayHTML.innerHTML = operand;
 }
@@ -55,6 +67,12 @@ function displayAnswer() {
 
 function deleteKey() {
     displaytext = displaytext.slice(0,-1);
+    if(displaytext.includes(".")) {
+        dotbutton.disabled = true;
+    }
+    else {
+        dotbutton.disabled = false;
+    }
     if(inputtednum1 == false) {
         num1 = displaytext;
     } else {
@@ -62,9 +80,6 @@ function deleteKey() {
     }
     displayHTML.innerHTML = displaytext;
 }
-const displayHTML = document.getElementsByClassName('display')[0];
-let displaytext = "";
-
 function operate(a,b,operator) {
     a = parseFloat(a);
     b = parseFloat(b);
