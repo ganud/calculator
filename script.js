@@ -41,14 +41,6 @@ function clearDisplay() {
     inputtednum1 = false;
 }
 
-let inputtednum1 = false;
-let operator = "";
-let num1 = "";
-let num2 = "";
-const displayHTML = document.getElementsByClassName('display')[0];
-let displaytext = "";
-const dotbutton = document.getElementById("dot");
-
 function addOperator(operand) {
     inputtednum1 = true;
     operator = operand;
@@ -105,3 +97,32 @@ function operate(a,b,operator) {
             break;
     }
 }
+
+
+let inputtednum1 = false;
+let operator = "";
+let num1 = "";
+let num2 = "";
+const displayHTML = document.getElementsByClassName('display')[0];
+let displaytext = "";
+const dotbutton = document.getElementById("dot");
+
+window.addEventListener('keydown', function(e) {
+    input = e.key;
+    if(Number.isInteger(+input) || (input == "."))
+    {
+        addKey(input);
+    }
+    else if(input == "+" || input == "-" || input == "*") {
+        addOperator(input);
+    }
+    else if(input == "/") {
+        addOperator("÷");
+    }
+    else if(input == "Enter") {
+        displayAnswer();
+    }
+    else if(input == "Backspace") {
+        deleteKey();
+    }
+});
