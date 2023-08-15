@@ -11,7 +11,7 @@ function multiply(a,b) {
 }
 
 function divide(a,b) {
-    return(a / b)
+    return(a / b);
 }
 
 function addKey(text) {
@@ -31,7 +31,7 @@ function addKey(text) {
     console.log(text)
 }
 
-function clearDisplay(text) {
+function clearDisplay() {
     displayHTML.innerHTML = "";
     displaytext = "";
     num1 = "";
@@ -48,7 +48,7 @@ let num2 = "";
 const displayHTML = document.getElementsByClassName('display')[0];
 let displaytext = "";
 const dotbutton = document.getElementById("dot");
-// Create conditions to take num1 and num2
+
 function addOperator(operand) {
     inputtednum1 = true;
     operator = operand;
@@ -58,8 +58,14 @@ function addOperator(operand) {
 }
 
 function displayAnswer() {
-    inputtednum1 = false;
     let ans = operate(num1, num2, operator);
+    if(displaytext == "") {
+        ans = 0;
+    }
+    if((num1) && (!num2)) {
+        ans = num1;
+    }
+    inputtednum1 = false;
     num1 = ans;
     displaytext = ans;
     displayHTML.innerHTML = ans;
@@ -80,6 +86,7 @@ function deleteKey() {
     }
     displayHTML.innerHTML = displaytext;
 }
+
 function operate(a,b,operator) {
     a = parseFloat(a);
     b = parseFloat(b);
@@ -98,7 +105,3 @@ function operate(a,b,operator) {
             break;
     }
 }
-
-// When operator clicked
-// Set current input to first number, allow input for second number.
-// Operate and update currentvalue to firstnumber
